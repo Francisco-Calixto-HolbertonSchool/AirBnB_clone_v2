@@ -24,8 +24,10 @@ def do_deploy(archive_path):
         run("mkdir -p " + uncompressed)
         run("tar -xzf /tmp/" + filename + ".tgz -C " + uncompressed)
         run("rm /tmp/" + filename + ".tgz")
-        run("rm /data/web_static/current")
-        run("ln -sf " + uncompressed + " /data/web_static/current")
+        run("mv " + uncompressed + "web_static/* " + uncompressed)
+        run("rm -rf " + uncompressed + "web_static")
+        run("rm -rf /data/web_static/current")
+        run("ln -s " + uncompressed + " /data/web_static/current")
         return True
     except:
         return False
