@@ -12,10 +12,9 @@ env.hosts = ['35.243.197.246', '35.196.27.66']
 def do_deploy(archive_path):
     '''distributes an archive to your web servers'''
 
-
     s = archive_path.split('/')
     filename = s[-1].split('.')[0]
-    uncompressed = "/data/web_static/releases/" + filename+ "/"
+    uncompressed = "/data/web_static/releases/" + filename + "/"
 
     if not os.path.exists(archive_path):
         return False
@@ -28,6 +27,7 @@ def do_deploy(archive_path):
         run("rm -rf " + uncompressed + "web_static")
         run("rm -rf /data/web_static/current")
         run("ln -s " + uncompressed + " /data/web_static/current")
+        print("New version deployed!")
         return True
     except:
         return False
