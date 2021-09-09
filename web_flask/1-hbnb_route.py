@@ -11,4 +11,9 @@ def home():
     """home route"""
     return ("Hello HBNB!")
 
+@app.route('/hbnb')
+def hbnb():
+    "hbnb route"
+    return ("Hello HBNB!")
+
 app.run(host='0.0.0.0', port=5000)
