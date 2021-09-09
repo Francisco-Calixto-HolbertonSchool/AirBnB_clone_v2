@@ -24,7 +24,7 @@ def c_is_etc(text):
     return ("C {}".format(text.replace('_', ' ')))
 
 @app.route('/python')
-@app.route('/python/(<text>)')
+@app.route('/python/<text>')
 def python_is_etc(text="is cool"):
     """variable route"""
     return ("Python {}".format(text.replace('_', ' ')))
