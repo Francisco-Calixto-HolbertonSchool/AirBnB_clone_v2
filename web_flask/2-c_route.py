@@ -18,10 +18,9 @@ def hbnb():
     return ("Hello HBNB!")
 
 
-@app.route('/c/<text>/')
-def C(text):
+@app.route('/c/<text>')
+def c_is_etc(text):
     """variable route"""
-    rep = "C " + text.replace('_', ' ')
-    return (f"C {rep}")
+    return ("C {}".format(text.replace('_', ' ')))
 
 app.run(host='0.0.0.0', port=5000)
