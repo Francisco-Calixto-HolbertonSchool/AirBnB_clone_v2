@@ -22,7 +22,7 @@ def hbnb():
 @app.route('/c/<text>')
 def C(text):
     """variable route"""
-    text = text.replace('_', ' ')
-    return ("C {}".format(text))
+    text = "C " + text.replace('_', ' ')
+    return (f"C {text}")
 
 app.run(host='0.0.0.0', port=5000)
