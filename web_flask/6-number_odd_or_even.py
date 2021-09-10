@@ -58,9 +58,9 @@ def even_or_odd(n):
     try:
         n = int(n)
         if (n % 2 == 0):
-            return (render_template('6-number_odd_or_even.html', n = n, parity = 'even'))
+            return (render_template('6-number_odd_or_even.html', n = n, even = True))
         else:
-            return (render_template('6-number_odd_or_even.html', n = n, parity = 'odd'))
+            return (render_template('6-number_odd_or_even.html', n = n, even = False))
     except:
         pass
 
