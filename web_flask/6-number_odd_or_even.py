@@ -57,7 +57,10 @@ def even_or_odd(n):
     """displays html if n is int, classifies by even or odd"""
     try:
         n = int(n)
-        return (render_template('6-number_odd_or_even.html', n = n))
+        if (n % 2 == 0):
+            return (render_template('6-number_odd_or_even.html', n = n, parity = 'even'))
+        else:
+            return (render_template('6-number_odd_or_even.html', n = n, parity = 'odd'))
     except:
         pass
 
