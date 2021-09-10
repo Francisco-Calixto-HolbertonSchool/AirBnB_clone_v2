@@ -47,7 +47,7 @@ def templates(n):
     """displays html page only if n is an int"""
     try:
         n = int(n)
-        return (render_template(5-number.html, n = n))
+        return (render_template('5-number.html', n = n))
     except:
         pass
 
