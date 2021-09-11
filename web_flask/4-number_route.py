@@ -30,10 +30,10 @@ def python_is_etc(text="is cool"):
     return ("Python {}".format(text.replace('_', ' ')))
 
 
-@app.route('/number/<n>', strict_slashes=False)
+@app.route('/number/<int:n>', strict_slashes=False)
 def reps_int(n):
     """variable route"""
-    return ("{} is a number".format(int(n)))
+    return ("{} is a number".format(n))
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
