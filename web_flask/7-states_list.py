@@ -11,7 +11,7 @@ app.url_map.strict_slashes = False
 
 
 @app.teardown_appcontext
-def remove_session():
+def remove_sesh():
     '''remove the current SQLAlchemy Session after request'''
     storage.close()
 
