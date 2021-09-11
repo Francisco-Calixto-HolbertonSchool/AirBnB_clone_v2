@@ -20,7 +20,7 @@ def remove_session():
 def states_list():
     '''render html page with a list of states'''
     objs = storage.all(State)
-    return (render_template('7-states_list.html', objs))
+    return (render_template('7-states_list.html', objs = objs))
 
 
 app.run(host='0.0.0.0', port=5000)
