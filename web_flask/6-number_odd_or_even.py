@@ -25,6 +25,7 @@ def c_is_etc(text):
     """variable route"""
     return ("C {}".format(text.replace('_', ' ')))
 
+
 @app.route('/python')
 @app.route('/python/<text>')
 def python_is_etc(text="is cool"):
@@ -47,7 +48,7 @@ def templates(n):
     """displays html page only if n is an int"""
     try:
         n = int(n)
-        return (render_template('5-number.html', n = n))
+        return (render_template('5-number.html', n=n))
     except:
         pass
 
@@ -58,9 +59,13 @@ def even_or_odd(n):
     try:
         n = int(n)
         if (n % 2 == 0):
-            return (render_template('6-number_odd_or_even.html', n = n, even = True))
+            return (render_template(
+                '6-number_odd_or_even.html', n=n, even=True)
+            )
         else:
-            return (render_template('6-number_odd_or_even.html', n = n, even = False))
+            return (render_template(
+                '6-number_odd_or_even.html', n=n, even=False)
+            )
     except:
         pass
 
