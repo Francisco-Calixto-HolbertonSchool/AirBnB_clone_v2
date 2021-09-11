@@ -6,7 +6,7 @@ from flask import render_template
 from models import storage
 
 app = Flask(__name__)
-app.url_map.strict_slashes = False
+
 
 
 @app.teardown_appcontext
