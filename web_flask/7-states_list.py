@@ -15,7 +15,7 @@ def remove_sesh():
     storage.close()
 
 
-@app.route('/states_list')
+@app.route('/states_list', strict_slashes=False)
 def states_list():
     '''render html page with a list of states'''
     objs = storage.all('State')

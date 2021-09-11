@@ -8,32 +8,32 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 
-@app.route('/')
+@app.route('/', strict_slashes=False)
 def home():
     """home route"""
     return ("Hello HBNB!")
 
 
-@app.route('/hbnb')
+@app.route('/hbnb', strict_slashes=False)
 def hbnb():
     "hbnb route"
     return ("Hello HBNB!")
 
 
-@app.route('/c/<text>')
+@app.route('/c/<text>', strict_slashes=False)
 def c_is_etc(text):
     """variable route"""
     return ("C {}".format(text.replace('_', ' ')))
 
 
 @app.route('/python')
-@app.route('/python/<text>')
+@app.route('/python/<text>', strict_slashes=False)
 def python_is_etc(text="is cool"):
     """variable route"""
     return ("Python {}".format(text.replace('_', ' ')))
 
 
-@app.route('/number/<n>')
+@app.route('/number/<n>', strict_slashes=False)
 def reps_int(n):
     """variable route"""
     try:
@@ -43,7 +43,7 @@ def reps_int(n):
         pass
 
 
-@app.route('/number_template/<n>')
+@app.route('/number_template/<n>', strict_slashes=False)
 def templates(n):
     """displays html page only if n is an int"""
     try:
@@ -53,7 +53,7 @@ def templates(n):
         pass
 
 
-@app.route('/number_odd_or_even/<n>')
+@app.route('/number_odd_or_even/<n>', strict_slashes=False)
 def even_or_odd(n):
     """displays html if n is int, classifies by even or odd"""
     try:

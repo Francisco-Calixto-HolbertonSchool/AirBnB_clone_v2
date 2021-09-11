@@ -6,32 +6,32 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 
-@app.route('/')
+@app.route('/', strict_slashes=False)
 def home():
     """home route"""
     return ("Hello HBNB!")
 
 
-@app.route('/hbnb')
+@app.route('/hbnb', strict_slashes=False)
 def hbnb():
     "hbnb route"
     return ("Hello HBNB!")
 
 
-@app.route('/c/<text>')
+@app.route('/c/<text>', strict_slashes=False)
 def c_is_etc(text):
     """variable route"""
     return ("C {}".format(text.replace('_', ' ')))
 
 
 @app.route('/python')
-@app.route('/python/<text>')
+@app.route('/python/<text>', strict_slashes=False)
 def python_is_etc(text="is cool"):
     """variable route"""
     return ("Python {}".format(text.replace('_', ' ')))
 
 
-@app.route('/number/<n>')
+@app.route('/number/<n>', strict_slashes=False)
 def reps_int(n):
     """variable route"""
     try:
