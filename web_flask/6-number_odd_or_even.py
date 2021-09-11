@@ -32,41 +32,24 @@ def python_is_etc(text="is cool"):
     return ("Python {}".format(text.replace('_', ' ')))
 
 
-@app.route('/number/<n>', strict_slashes=False)
+@app.route('/number/<int:n>', strict_slashes=False)
 def reps_int(n):
     """variable route"""
-    try:
-        n = int(n)
-        return ("{} is a number".format(n))
-    except:
-        pass
+    return ("{} is a number".format(n))
 
 
-@app.route('/number_template/<n>', strict_slashes=False)
+@app.route('/number_template/<int:n>', strict_slashes=False)
 def templates(n):
     """displays html page only if n is an int"""
-    try:
-        n = int(n)
-        return (render_template('5-number.html', n=n))
-    except:
-        pass
+    return (render_template('5-number.html', n=n))
 
-
-@app.route('/number_odd_or_even/<n>', strict_slashes=False)
+@app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
 def even_or_odd(n):
     """displays html if n is int, classifies by even or odd"""
-    try:
-        n = int(n)
-        if (n % 2 == 0):
-            return (render_template(
-                '6-number_odd_or_even.html', n=n, even=True)
-            )
-        else:
-            return (render_template(
-                '6-number_odd_or_even.html', n=n, even=False)
-            )
-    except:
-        pass
+    if (n % 2 == 0):
+        return (render_template('6-number_odd_or_even.html', n=n, even=True))
+    else:
+        return (render_template('6-number_odd_or_even.html', n=n, even=False))
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
