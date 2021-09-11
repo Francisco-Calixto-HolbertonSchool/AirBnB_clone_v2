@@ -19,6 +19,7 @@ def remove_sesh(a):
 def states_list():
     '''render html page with a list of states'''
     objs = storage.all('State')
+    print(objs)
     return (render_template('7-states_list.html', navigation=objs))
 
 if __name__ == "__main__":
