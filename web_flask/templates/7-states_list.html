@@ -6,8 +6,8 @@
     <BODY>
         <H1>States</H1>
         <UL>
-        {% for item in navigation %}
-            <li>{{ item.id }}</li>
+        {% for item in navigation.values() %}
+            <li>{{ item.id }}<B>{{ item.name }}</B>></li>
         {% endfor %}
         </UL>
     </BODY>
