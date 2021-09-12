@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 @app.teardown_appcontext
-def remove_sesh(a):
+def remove_sesh(self):
     '''remove the current SQLAlchemy Session after request'''
     storage.close()
 
