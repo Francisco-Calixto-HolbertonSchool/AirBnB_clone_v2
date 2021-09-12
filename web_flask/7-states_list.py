@@ -4,6 +4,7 @@
 from flask import Flask
 from flask import render_template
 from models import storage
+from models.state import State
 
 app = Flask(__name__)
 
@@ -18,7 +19,7 @@ def remove_sesh(a):
 @app.route('/states_list', strict_slashes=False)
 def states_list():
     '''render html page with a list of states'''
-    objs = storage.all('State')
+    objs = storage.all(State)
     print(objs)
     return (render_template('7-states_list.html', navigation=objs))
 
