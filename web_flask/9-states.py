@@ -28,7 +28,8 @@ def states_by_id(id=None):
     objs = storage.all(State)
     for state in objs.values():
         if state.id == id:
-            name = state.name
+            name = state
+            break
     return (render_template('9-states.html', state=name, id=id))
 
 if __name__ == "__main__":

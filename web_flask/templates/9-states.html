@@ -5,7 +5,7 @@
     </HEAD>
     <BODY>
     {% if id %}
-        <H1>State: {{ state }}</H1>
+        <H1>State: {{ state.name }}</H1>
         <H3>Cities:</H3>
         <UL>
         {% for city in state.cities %}
