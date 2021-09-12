@@ -26,6 +26,7 @@ def states_list():
 def states_by_id(id=None):
     '''render html page with a list of states and its cities'''
     objs = storage.all(State)
+    valid = False
     for state in objs.values():
         if state.id == id:
             name = state
