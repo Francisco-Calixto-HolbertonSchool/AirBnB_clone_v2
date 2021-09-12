@@ -19,7 +19,7 @@ def remove_sesh(self):
 def cities_by_states():
     '''render html page with a list of states and its cities'''
     objs = storage.all(State)
-    return (render_template('7-states_list.html', states=objs))
+    return (render_template('8-cities_by_states.html', states=objs))
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
