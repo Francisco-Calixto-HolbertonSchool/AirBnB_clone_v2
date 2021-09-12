@@ -15,6 +15,13 @@ def remove_sesh(self):
     storage.close()
 
 
+@app.route('/states', strict_slashes=False)
+def states_list():
+    '''render html page with a list of states'''
+    objs = storage.all(State)
+    return (render_template('7-states_list.html', navigation=objs))
+
+
 @app.route('/states/<id>', strict_slashes=False)
 def states_by_id(id=None):
     '''render html page with a list of states and its cities'''
@@ -22,11 +29,9 @@ def states_by_id(id=None):
     for state in objs.values():
         if state.id == id:
             name = state
+            valid = True
             break
-    if not id:
-        return (render_template('7-states_list.html', navigation=objs))
-    else:
-        return (render_template('9-states.html', state=name, id=id))
+    return (render_template('9-states.html', state=name, valid=valid))
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
