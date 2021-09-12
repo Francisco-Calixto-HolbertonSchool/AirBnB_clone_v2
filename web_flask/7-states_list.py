@@ -9,7 +9,6 @@ from models.state import State
 app = Flask(__name__)
 
 
-
 @app.teardown_appcontext
 def remove_sesh(a):
     '''remove the current SQLAlchemy Session after request'''
